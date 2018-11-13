@@ -74,14 +74,14 @@ public class Main {
         for (int i : Test1.randomSet(100)) {
             System.out.print(i);
         }
-
         Score = Test1.Play();
+        /*
         PrintWriter writer = new PrintWriter("High Scores.txt", "UTF-8");
         wr.write(new Integer(Score).toString());
         writer.println("The first line");
         writer.println("The second line");
         writer.close();
-
+        */
     }
 }
 
