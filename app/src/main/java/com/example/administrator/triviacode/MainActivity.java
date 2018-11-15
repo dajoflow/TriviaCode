@@ -20,6 +20,7 @@ public class Game
     // Instance Variables
     private int qArray[]; // Question ID array.
     public int score;
+    private long score;
 
     /*
     PUBLIC method --- randomSet
@@ -62,6 +63,7 @@ public class Game
            // display question given on Question ID (qArray[i-1]) and 4
            // possible answers (3 correct 1 wrong).
             system.out.print(qArray[i - 1]); // Display Q ID
+            // Later change to display question & answers based on Q ID in Q database
         }
 
         endTime = System.nanoTime();
@@ -72,23 +74,23 @@ public class Game
 
 public class Main {
     public static void main(String[] args) {
-        Game Test1 = new Game();
-        long score;
-
-        //------Test Random Array------
-        for (int i : Test1.randomSet(100)) {
-            System.out.print(i);
-        }
-
-        score = Test1.Play();
         /*
-        PrintWriter writer = new PrintWriter("High Scores.txt", "UTF-8");
-        wr.write(new Integer(Score).toString());
-        writer.println("The first line");
-        writer.println("The second line");
-        writer.close();
-        */
+        Visual Dispaly with 4 options:
 
+        Change Difficulty
+        Play
+        View High Scores
+        Quit
+
+        loop until user selects Quit
+            Wait for user input.
+            call method
+        end loop
+         */
+
+        // User selects play
+        Game Test1 = new Game();
+        Test1.score = Test1.Play();
     }
 }
 
