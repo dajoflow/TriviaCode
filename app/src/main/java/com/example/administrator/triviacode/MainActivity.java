@@ -50,31 +50,37 @@ public class Game
 
     public int Play() {
         int[] qArray = this.randomSet(100);
-        int Strike = 0;
+        int strike = 0;
         int i = 1;
+        long startTime = System.nanoTime();
+        long endTime;
+        long score;
 
         // Repeate while # of wrong answers is less than 3 and less than 10
         // questions have been completed.
-        while ((Strike < 3) && (i <= 10)) {
+        while ((strike < 3) && (i <= 10)) {
            // display question given on Question ID (qArray[i-1]) and 4
            // possible answers (3 correct 1 wrong).
             system.out.print(qArray[i - 1]); // Display Q ID
         }
 
-        return (10 - Strike); // Returns a "Score" of a # of questions answered correctly.
+        endTime = System.nanoTime();
+        score = endTime - startTime;
+        return (score); // Returns score, which is total elapsed time to play the game.
     }
 }
 
 public class Main {
     public static void main(String[] args) {
         Game Test1 = new Game();
-        int Score;
+        long score;
 
         //------Test Random Array------
         for (int i : Test1.randomSet(100)) {
             System.out.print(i);
         }
-        Score = Test1.Play();
+
+        score = Test1.Play();
         /*
         PrintWriter writer = new PrintWriter("High Scores.txt", "UTF-8");
         wr.write(new Integer(Score).toString());
@@ -82,10 +88,12 @@ public class Main {
         writer.println("The second line");
         writer.close();
         */
+
     }
 }
 
 public class DisplayHighScores() {
 
         }
+
 
